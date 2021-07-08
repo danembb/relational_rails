@@ -4,7 +4,7 @@ RSpec.describe Dog do
   it {should belong_to :dog_park}
 
   describe 'instance methods' do
-    before :each do
+    before(:each) do
       @park_1 = DogPark.create!(name: "Woofs and Wags",
                               capacity: 25,
                               off_leash: false,
