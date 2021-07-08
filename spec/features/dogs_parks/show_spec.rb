@@ -13,28 +13,28 @@ RSpec.describe 'the dog park show page' do
   end
 
   it 'displays the dog park name' do
-    visit "/dog-parks/#{@park_1.id}"
+    visit "/dog_parks/#{@park_1.id}"
 
     expect(page).to have_content(@park_1.name)
     expect(page).to_not have_content(@park_2.name)
   end
 
   it 'displays the dog park capacity' do
-    visit "/dog-parks/#{@park_1.id}"
+    visit "/dog_parks/#{@park_1.id}"
 
     expect(page).to have_content(@park_1.capacity)
     expect(page).to_not have_content(@park_2.capacity)
   end
 
   it 'displays if the dog park is off leash' do
-    visit "/dog-parks/#{@park_1.id}"
+    visit "/dog_parks/#{@park_1.id}"
 
     expect(page).to have_content('Off Leash Park: false')
     expect(page).to_not have_content('Off Leash Park: true')
   end
 
   it 'displays if the dog park provides food' do
-    visit "/dog-parks/#{@park_1.id}"
+    visit "/dog_parks/#{@park_1.id}"
 
     expect(page).to have_content('Food for sale: true')
     expect(page).to_not have_content('Food for sale: false')

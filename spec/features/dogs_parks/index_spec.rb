@@ -11,7 +11,7 @@ RSpec.describe "Dog parks index page" do
                             off_leash: true,
                             food: false)
 
-    visit "/dog-parks"
+    visit "/dog_parks"
 
     expect(page).to have_content(park_1.name)
     expect(page).to have_content(park_2.name)
