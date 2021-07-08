@@ -1,2 +1,5 @@
 class DogsController < ApplicationController
-end 
+  def index
+    @dogs = Dog.all
+  end
+end
