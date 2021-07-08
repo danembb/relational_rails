@@ -28,7 +28,6 @@ RSpec.describe 'the dog park show page' do
 
   it 'displays if the dog park is off leash' do
     visit "/dog-parks/#{@park_1.id}"
-    save_and_open_page
 
     expect(page).to have_content('Off Leash Park: false')
     expect(page).to_not have_content('Off Leash Park: true')
