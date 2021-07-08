@@ -1,0 +1,3 @@
+class CatCafe < ApplicationRecord
+
+end
