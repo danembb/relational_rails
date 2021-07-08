@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+#Dane, 7/8: Should this be a feature?
 RSpec.describe 'cat cafe page', type: :feature do
   #For each parent table
   #As a visitor
