@@ -28,7 +28,8 @@ RSpec.describe 'Dog index page' do
   it 'can see all dog parks' do
     visit '/dogs'
 
-    expect(page).to have_content("Dog park id: #{@park_1.id}")
+    expect(page).to have_content("Dog park id: #{@dog_1.dog_park_id}")
+    expect(page).to have_content("Dog park id: #{@dog_2.dog_park_id}")
   end
 
   it 'can see if each dog plays fetch' do
