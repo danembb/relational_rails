@@ -1,0 +1,11 @@
+<h1> <%= @dog_park.name %> </h1>
+<% @dogs.each do |dog| %>
+  <h3><%= dog.name %></h3>
+  <p>Dog park id: <%= dog.dog_park_id %></p>
+  <p>Plays fetch: <%= dog.plays_fetch %></p>
+  <p>Age: <%= dog.age %></p>
+  <p>Breed: <%= dog.breed %></p>
+  <p>Created at: <%= dog.created_at %></p>
+  <p>Updated at: <%= dog.updated_at %></p>
+  <br>
+<% end %>
