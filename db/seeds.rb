@@ -15,7 +15,7 @@
                         off_leash: true,
                         food: false)
 @dog_1 = Dog.create!(name: 'Alfie',
-                        plays_fetch: false,
+                        plays_fetch: true,
                         age: 1.5,
                         breed: 'Australian Shepherd',
                         dog_park_id: @park_1.id)
