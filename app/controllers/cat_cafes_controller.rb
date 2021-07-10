@@ -8,6 +8,4 @@ class CatCafesController < ApplicationController
     @cat_cafe = CatCafe.find(params[:id])
   end
 
-  def destroy
-  end
 end

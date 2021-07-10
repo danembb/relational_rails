@@ -18,4 +18,34 @@ RSpec.describe 'cat show page' do
                          color: 'Black and white',
                          cat_cafe_id: @cat_cafe1.id)
   end
+
+  it 'displays the cats name' do
+    visit "/cats/#{@cat_1.id}"
+  expect(page).to have_content(@cat_1.name)
+  expect(page).to_not have_content(@cat_2.name)
+  end
+
+  it 'can see if cats are friendly' do
+    visit "/cats/#{@cat_1.id}"
+    expect(page).to have_content(@cat_1.friendly)
+    expect(page).to have_content(@cat_2.friendly)
+  end
+
+  it 'can see all cats ages' do
+    visit "/cats/#{@cat_1.id}"
+    expect(page).to have_content(@cat_1.age)
+    #Dane, 7.9: This test fails *sometimes* when the cat_cafe_id is generated with a "6" in it. 
+    expect(page).to_not have_content(@cat_2.age)
+  end
+
+  it 'can see all cats color' do
+    visit "/cats/#{@cat_1.id}"
+    expect(page).to have_content(@cat_1.color)
+    expect(page).to_not have_content(@cat_2.color)
+  end
+
+  it 'can see dog park id' do
+    visit "/cats/#{@cat_1.id}"
+    expect(page).to have_content(@cat_1.cat_cafe_id)
+  end
 end

@@ -47,4 +47,9 @@ RSpec.describe 'cat index page' do
     expect(page).to have_content(@cat_1.color)
     expect(page).to have_content(@cat_2.color)
   end
+
+  it 'can see dog park id' do
+    visit '/cats'
+    expect(page).to have_content(@cat_1.cat_cafe_id)
+  end
 end
