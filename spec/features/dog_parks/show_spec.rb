@@ -88,4 +88,13 @@ RSpec.describe 'the dog park show page' do
 
     expect(current_path).to eq('/dogs')
   end
+
+  it 'links to dog parks dogs page' do
+    visit "/dog_parks/#{@park_1.id}"
+    save_and_open_page
+
+    click_on "Dogs in #{@park_1.name}"
+
+    expect(current_path).to eq("/dog_parks/#{@park_1.id}/dogs")
+  end
 end
