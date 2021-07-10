@@ -91,7 +91,6 @@ RSpec.describe 'the dog park show page' do
 
   it 'links to dog parks dogs page' do
     visit "/dog_parks/#{@park_1.id}"
-    save_and_open_page
 
     click_on "Dogs in #{@park_1.name}"
 
