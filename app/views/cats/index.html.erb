@@ -1,0 +1,7 @@
+<h1>Cats</h1>
+<% @cats.each do |cat| %>
+  <h3><%= cat.name %></h3>
+  <p>Friendly: <%= cat.friendly %></p>
+  <p>Age: <%= cat.age %></p>
+  <p>Color: <%= cat.color %></p>
+<% end %>
