@@ -7,3 +7,4 @@
 <p>Created at: <%= @dog_park.created_at %></p>
 <p>Updated at: <%= @dog_park.updated_at %></p>
 <p>Dog count: <%= @dog_park.dog_count %></p>
+<p><%= link_to "Dogs in #{@dog_park.name}", "/dog_parks/#{@dog_park.id}/dogs" %></p>
