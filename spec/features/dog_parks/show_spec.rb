@@ -72,4 +72,20 @@ RSpec.describe 'the dog park show page' do
 
     expect(page).to have_content("Dog count: #{@park_1.dog_count}")
   end
+
+  it 'links to dog park index' do
+    visit "/dog_parks/#{@park_1.id}"
+
+    click_on 'Dog Parks Index'
+
+    expect(current_path).to eq('/dog_parks')
+  end
+
+  it 'links to dogs index' do
+    visit "/dog_parks/#{@park_1.id}"
+
+    click_on 'Dogs Index'
+
+    expect(current_path).to eq('/dogs')
+  end
 end
