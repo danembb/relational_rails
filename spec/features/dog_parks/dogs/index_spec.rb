@@ -78,4 +78,20 @@ RSpec.describe 'Dog parks dogs index' do
     expect(page).to have_content("Updated at: #{@dog_1.updated_at}")
     expect(page).to have_content("Updated at: #{@dog_2.updated_at}")
   end
+
+  it 'links to dog park index' do
+    visit "/dog_parks/#{@park_1.id}/dogs"
+
+    click_on 'Dog Parks Index'
+
+    expect(current_path).to eq('/dog_parks')
+  end
+
+  it 'links to dogs index' do
+    visit "/dog_parks/#{@park_1.id}/dogs"
+
+    click_on 'Dogs Index'
+
+    expect(current_path).to eq('/dogs')
+  end
 end
