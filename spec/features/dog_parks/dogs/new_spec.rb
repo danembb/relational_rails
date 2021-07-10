@@ -9,6 +9,8 @@ RSpec.describe 'the Dog Park creation' do
 
     visit "/dog_parks/#{park_1.id}/dogs/new"
 
+    expect(page).to_not have_content('Hank')
+
     fill_in('name', with: 'Hank')
     fill_in('plays_fetch', with: true)
     fill_in('age', with: 8)
