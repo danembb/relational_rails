@@ -7,9 +7,11 @@ RSpec.describe 'the Dog Park creation' do
                             off_leash: false,
                             food: true)
 
-    visit "/dog_parks/#{park_1.id}/dogs/new"
+    visit "/dog_parks/#{park_1.id}/dogs"
 
     expect(page).to_not have_content('Hank')
+
+    visit "/dog_parks/#{park_1.id}/dogs/new"
 
     fill_in('name', with: 'Hank')
     fill_in('plays_fetch', with: true)

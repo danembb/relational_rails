@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'the Dog Park creation' do
   it 'can create a new dog park' do
+    visit '/dog_parks'
+
+    expect(page).to_not have_content('Doggy Territory')
+
     visit '/dog_parks/new'
 
     fill_in('Name', with: 'Doggy Territory')
