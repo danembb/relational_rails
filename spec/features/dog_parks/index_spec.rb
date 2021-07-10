@@ -52,5 +52,13 @@ RSpec.describe 'Dog parks index page' do
     expect(current_path).to eq('/dogs')
   end
 
+  it 'links to to new dog park page' do
+    visit '/dog_parks'
+
+    click_on 'Create Dog Park'
+
+    expect(current_path).to eq('/dog_parks/new')
+  end
+
   it 'lists dog parks in order by created at'
 end
