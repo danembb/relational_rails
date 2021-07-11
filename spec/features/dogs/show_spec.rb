@@ -80,7 +80,7 @@ RSpec.describe 'the dog show page' do
     expect(current_path).to eq('/dogs')
   end
 
-  it 'links to update dogs page' do
+  it 'links to update dog page' do
     visit "/dogs/#{@dog_1.id}"
 
     click_on 'Update Dog'
