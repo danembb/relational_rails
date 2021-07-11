@@ -1,7 +1,11 @@
 class DogParkDogsController < ApplicationController
   def index
     @dog_park = DogPark.find(params[:dog_park_id])
-    @dogs = @dog_park.dogs
+    if params[:alpha] == 'true'
+      @dogs = @dog_park.dogs.order(:name)
+    else
+      @dogs = @dog_park.dogs
+    end
   end
 
   def new
