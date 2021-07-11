@@ -85,6 +85,18 @@ RSpec.describe 'Dog index page' do
 
       expect(current_path).to eq('/dogs')
     end
+
+    it 'links to edit page for each dog' do
+      visit '/dogs'
+      click_on 'Update Alfie'
+
+      expect(current_path).to eq("/dogs/#{@dog_1.id}/edit")
+
+      visit '/dogs'
+      click_on 'Update Hazel'
+
+      expect(current_path).to eq("/dogs/#{@dog_2.id}/edit")
+    end
   end
 
   describe 'content filtering' do
