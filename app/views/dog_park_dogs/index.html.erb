@@ -2,6 +2,7 @@
 <h4><%= link_to 'Dogs Index', '/dogs' %></h4>
 <h1> <%= @dog_park.name %> </h1>
 <h4><%= link_to 'Create Dog',  "/dog_parks/#{@dog_park.id}/dogs/new"%></h4>
+<h4><%= link_to 'Sort Alphabetically', "/dog_parks/#{@dog_park.id}/dogs?alpha=true" %></h4>
 <% @dogs.each do |dog| %>
   <h3><%= dog.name %></h3>
   <p>Dog park id: <%= dog.dog_park_id %></p>
