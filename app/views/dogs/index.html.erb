@@ -10,5 +10,6 @@
   <p>Breed: <%= dog.breed %></p>
   <p>Created at: <%= dog.created_at %></p>
   <p>Updated at: <%= dog.updated_at %></p>
+  <p><%= link_to "Update #{dog.name}", "/dogs/#{dog.id}/edit" %></p>
   <br>
 <% end %>
