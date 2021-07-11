@@ -13,6 +13,7 @@ class DogParkDogsController < ApplicationController
     redirect_to "/dog_parks/#{dog.dog_park_id}/dogs"
   end
 
+private
   def dog_params
     params.permit(:name, :plays_fetch, :age, :breed, :dog_park_id)
   end

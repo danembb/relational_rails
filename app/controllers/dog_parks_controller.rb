@@ -15,10 +15,6 @@ class DogParksController < ApplicationController
     redirect_to '/dog_parks'
   end
 
-  def dog_park_params
-    params.permit(:name, :capacity, :off_leash, :food)
-  end
-
   def edit
     @dog_park = DogPark.find(params[:id])
   end
@@ -27,5 +23,10 @@ class DogParksController < ApplicationController
     dog_park = DogPark.find(params[:id])
     dog_park.update(dog_park_params)
     redirect_to "/dog_parks/#{dog_park.id}"
+  end
+
+private
+  def dog_park_params
+    params.permit(:name, :capacity, :off_leash, :food)
   end
 end
