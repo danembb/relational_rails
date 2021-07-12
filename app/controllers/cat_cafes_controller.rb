@@ -1,6 +1,6 @@
 class CatCafesController < ApplicationController
   def index
-    @cat_cafes = CatCafe.all
+    @cat_cafes = CatCafe.order(:created_at)
     #@cat_cafes = CatCafe.alphabetical
   end
 

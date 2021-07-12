@@ -8,6 +8,24 @@ RSpec.describe 'cat cafe show page' do
   before(:each) do
     @cat_cafe1 = CatCafe.create!(name: "Denver Cat Caves", capacity: "22")
     @cat_cafe2 = CatCafe.create!(name: "The Meowning Sip", capacity: "15")
+    @cat_1 = Cat.create!(name: 'Bb',
+                         friendly: true,
+                         age: 5,
+                         color: 'White and black',
+                         cat_cafe_id: @cat_cafe1.id
+                        )
+    @cat_2 = Cat.create!(name: 'Nico',
+                         friendly: true,
+                         age: 6,
+                         color: 'Black and white',
+                         cat_cafe_id: @cat_cafe1.id
+                        )
+    @cat_3 = Cat.create!(name: 'Arkham',
+                         friendly: true,
+                         age: 1,
+                         color: 'Black and brown',
+                         cat_cafe_id: @cat_cafe2.id
+                        )
   end
 
   it 'displays the cat cafe name' do
@@ -37,5 +55,23 @@ RSpec.describe 'cat cafe show page' do
 
     expect(page).to have_content("Adopting?: #{@cat_cafe1.adopting}")
     expect(page).to_not have_content("Adopting?: false")
+  end
+
+  it 'displays cat cafe created at attribute' do
+    visit "/cat_cafes/#{@cat_cafe1.id}"
+
+    expect(page).to have_content("Created at: #{@cat_cafe1.created_at}")
+  end
+
+  it 'displays cat cafe updated at attribute' do
+    visit "/cat_cafes/#{@cat_cafe1.id}"
+
+    expect(page).to have_content("Created at: #{@cat_cafe1.updated_at}")
+  end
+
+  it 'displays count cats in the cat cafe' do
+    visit "/cat_cafes/#{@cat_cafe1.id}"
+
+    expect(page).to have_content("Cat Count: #{@cat_cafe1.cat_count}")
   end
 end
