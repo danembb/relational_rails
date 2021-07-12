@@ -51,4 +51,20 @@ RSpec.describe 'cat show page' do
     visit "/cats/#{@cat_1.id}"
     expect(page).to have_content(@cat_1.cat_cafe_id)
   end
+
+  it 'links to cat cafes index' do
+    visit '/cat_cafes'
+
+    click_on 'Cat Cafes Index'
+
+    expect(current_path).to eq('/cat_cafes')
+  end
+
+  it 'links to cats index' do
+    visit '/cats'
+
+    click_on 'Cats Index'
+
+    expect(current_path).to eq('/cats')
+  end
 end

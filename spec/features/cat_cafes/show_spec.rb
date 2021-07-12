@@ -74,4 +74,20 @@ RSpec.describe 'cat cafe show page' do
 
     expect(page).to have_content("Cat Count: #{@cat_cafe1.cat_count}")
   end
+
+  it 'links to cat cafes index' do
+    visit '/cat_cafes'
+
+    click_on 'Cat Cafes Index'
+
+    expect(current_path).to eq('/cat_cafes')
+  end
+
+  it 'links to cats index' do
+    visit '/cats'
+
+    click_on 'Cats Index'
+
+    expect(current_path).to eq('/cats')
+  end
 end

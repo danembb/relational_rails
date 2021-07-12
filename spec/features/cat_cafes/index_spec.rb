@@ -21,11 +21,33 @@ RSpec.describe "cat cafe index page" do
 
 
     visit "/cat_cafes"
-    save_and_open_page
-    expect(page).to have_content(cat_cafe1.name)
-    expect(page).to have_content(cat_cafe2.name)
-    expect(page).to have_content(cat_cafe1.serves_food)
-    expect(page).to have_content(cat_cafe2.serves_food)
-
+    expect(page).to have_content(@cat_cafe1.name)
+    expect(page).to have_content(@cat_cafe2.name)
+    expect(page).to have_content(@cat_cafe1.serves_food)
+    expect(page).to have_content(@cat_cafe2.serves_food)
   end
+
+  it 'shows all cat cafes created at' do
+    visit '/cat_cafes'
+    expect(page).to have_content(@cat_cafe1.created_at)
+    expect(page).to have_content(@cat_cafe2.created_at)
+  end
+
+  it 'links to cat cafes index' do
+    visit '/cat_cafes'
+
+    click_on 'Cat Cafes Index'
+
+    expect(current_path).to eq('/cat_cafes')
+  end
+
+  it 'links to cats index' do
+    visit '/cats'
+
+    click_on 'Cats Index'
+
+    expect(current_path).to eq('/cats')
+  end
+
+  it 'lists cat cafes in order by created at'
 end
