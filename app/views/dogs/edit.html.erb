@@ -1,0 +1,12 @@
+<%= form_with url: "/dogs/#{@dog.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name  %>
+  <%= form.label :plays_fetch %>
+  <%= form.text_field :plays_fetch  %>
+  <%= form.label :age %>
+  <%= form.text_field :age  %>
+  <%= form.label :breed %>
+  <%= form.text_field :breed  %>
+  <%= form.hidden_field :dog_park_id, value: @dog.dog_park_id %>
+  <%= form.submit 'Update Dog' %>
+<% end %>

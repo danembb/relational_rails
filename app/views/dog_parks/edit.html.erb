@@ -1,0 +1,11 @@
+<%= form_with url: "/dog_parks/#{@dog_park.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name  %>
+  <%= form.label :capacity %>
+  <%= form.text_field :capacity  %>
+  <%= form.label :off_leash %>
+  <%= form.text_field :off_leash  %>
+  <%= form.label :food %>
+  <%= form.text_field :food  %>
+  <%= form.submit 'Update Dog Park' %>
+<% end %>

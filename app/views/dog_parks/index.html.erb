@@ -1,8 +1,12 @@
 <h4><%= link_to 'Dog Parks Index', '/dog_parks' %></h4>
 <h4><%= link_to 'Dogs Index', '/dogs' %></h4>
+
 <h1>Dog Parks</h1>
+<h4><%= link_to 'Create Dog Park',  '/dog_parks/new'%></h4>
 
 <% @dog_parks.each do |dog_park| %>
   <h3><%= dog_park.name %></h3>
   <p>Record created at: <%= dog_park.created_at %></p>
+  <p><%= link_to "Update #{dog_park.name}", "/dog_parks/#{dog_park.id}/edit" %></p>
+  <br>
 <% end %>

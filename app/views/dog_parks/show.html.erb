@@ -1,6 +1,7 @@
 <h4><%= link_to 'Dog Parks Index', '/dog_parks' %></h4>
 <h4><%= link_to 'Dogs Index', '/dogs' %></h4>
 <h1><%= @dog_park.name %></h1>
+<h4><%= link_to 'Update Dog Park', "/dog_parks/#{@dog_park.id}/edit" %></h4>
 <p>Capacity: <%= @dog_park.capacity %></p>
 <p>Off Leash Park: <%= @dog_park.off_leash %></p>
 <p>Food for sale: <%= @dog_park.food %></p>
