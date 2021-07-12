@@ -39,8 +39,8 @@ RSpec.describe 'cat cafe show page' do
   it 'displays the cat cafe capacity' do
     visit "/cat_cafes/#{@cat_cafe1.id}"
 
-    expect(page).to have_content(@cat_cafe1.capacity)
-    expect(page).to_not have_content(@cat_cafe2.capacity)
+    expect(page).to have_content("Capacity: #{@cat_cafe1.capacity}")
+    expect(page).to_not have_content("Capacity: #{@cat_cafe2.capacity}")
   end
 
   it 'displays if the cat cafe serves food' do

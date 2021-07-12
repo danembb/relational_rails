@@ -31,7 +31,7 @@ RSpec.describe 'cat index page' do
 
   it 'can see cat cafe' do
     visit '/cats'
-    expect(page).to have_content("Cat cafe id: #{@cat_cafe1.id}")
+    expect(page).to have_content("My Cat Cafe ID: #{@cat_cafe1.id}")
   end
 
   it 'can see cat names' do

@@ -1,10 +1,10 @@
-<h4><%= link_to "Cat Cafes Index", "/cat_cafes"</h4>
-<h4><%= link_to "Cats Index", "/cats" %></h4>
+<h4><%= link_to 'Cat Cafes Index', '/cat_cafes' %></h4>
+<h4><%= link_to 'Cats Index', '/cats' %></h4>
 <h1><%= @cat_cafe.name %></h1>
 <p>Capacity: <%= @cat_cafe.capacity %></p>
 <p>Serves Food: <%= @cat_cafe.serves_food %></p>
 <p>Adopting?: <%= @cat_cafe.adopting %></p>
 <p>Cat Count: <%= @cat_cafe.cat_count %></p>
-<p><%= link_to "Cats in #{@cat_cafe.name}", "/cat_cafes/#{@cat_cafe.id}/cats"</p>
 <p>Created at: <%= @cat_cafe.created_at %></p>
 <p>Updated at: <%= @cat_cafe.updated_at %></p>
+<p><%= link_to "Cats in #{@cat_cafe.name}", "/cat_cafes/#{@cat_cafe.id}/cats" %></p>

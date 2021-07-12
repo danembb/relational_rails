@@ -26,7 +26,7 @@ RSpec.describe 'cat cafe cats index page' do
                          cat_cafe_id: @cat_cafe1.id
                         )
     @cat_3 = Cat.create!(name: 'Arkham',
-                         friendly: true,
+                         friendly: false,
                          age: 1,
                          color: 'Black and brown',
                          cat_cafe_id: @cat_cafe2.id
@@ -48,7 +48,7 @@ RSpec.describe 'cat cafe cats index page' do
 
   it 'can see if each cat is friendly' do
     visit "/cat_cafes/#{@cat_cafe1.id}/cats"
-    save_and_open_page
+
     expect(page).to have_content(@cat_1.friendly)
     expect(page).to have_content(@cat_2.friendly)
     expect(page).to_not have_content(@cat_3.friendly)

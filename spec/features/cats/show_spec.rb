@@ -36,9 +36,9 @@ RSpec.describe 'cat show page' do
 
   it 'can see all cats ages' do
     visit "/cats/#{@cat_1.id}"
-    expect(page).to have_content(@cat_1.age)
+    expect(page).to have_content("My Age: #{@cat_1.age}")
     #Dane, 7.9: This test fails *sometimes* when the cat_cafe_id is generated with a "6" in it.
-    expect(page).to_not have_content(@cat_2.age)
+    expect(page).to_not have_content("My Age: #{@cat_2.age}")
   end
 
   it 'can see all cats color' do
