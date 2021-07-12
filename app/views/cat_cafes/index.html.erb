@@ -1,6 +1,9 @@
+<h4><%= link_to "Cat Cafes Index", "/cat_cafes" %></h4>
+<h4><%= link_to "Cats Index", "/cats" %></h4>
 <h1>Cat Cafes</h1>
 
 <% @cat_cafes.each do |cat_cafe| %>
   <h3>Cafe Name: <%= cat_cafe.name %></h3>
   <p>Serving Food: <%= cat_cafe.serves_food %></p>
+  <p>Created At: <%= cat_cafe.created_at %></p>
 <% end %>
