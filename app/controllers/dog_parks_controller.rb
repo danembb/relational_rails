@@ -1,6 +1,6 @@
 class DogParksController < ApplicationController
   def index
-    @dog_parks = DogPark.all
+    @dog_parks = DogPark.order(:created_at)
   end
 
   def show
