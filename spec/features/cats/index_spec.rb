@@ -4,6 +4,10 @@ RSpec.describe 'cat index page' do
   # As a visitor
   # When I visit '/child_table_name'
   # Then I see each Child in the system including the Child's attributes:
+
+  # As a visitor
+  # When I visit any page on the site
+  # Then I see a link at the top of the page that takes me to the Child Index
   before(:each) do
     @cat_cafe1 = CatCafe.create!(name: "Denver Cat Caves",
                                  capacity: "22"
