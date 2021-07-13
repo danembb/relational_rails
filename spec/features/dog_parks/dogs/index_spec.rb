@@ -107,6 +107,22 @@ RSpec.describe 'Dog parks dogs index' do
   end
 
   describe 'content filtering' do
-    it 'sorts page alphabetically'
+    it 'sorts page alphabetically' do
+      dog_4 = Dog.create!(name: 'Hank',
+                              plays_fetch: true,
+                              age: 8,
+                              breed: 'Australian Shepherd',
+                              dog_park_id: @park_1.id)
+
+      visit "/dog_parks/#{@park_1.id}/dogs"
+
+      expect(page.text.index("Alfie")).to be < page.text.index("Hazel")
+      expect(page.text.index("Hazel")).to be < page.text.index("Hank")
+
+      click_on 'Sort Alphabetically'
+
+      expect(page.text.index("Alfie")).to be < page.text.index("Hank")
+      expect(page.text.index("Hank")).to be < page.text.index("Hazel")
+    end
   end
 end
