@@ -116,13 +116,13 @@ RSpec.describe 'Dog parks dogs index' do
 
       visit "/dog_parks/#{@park_1.id}/dogs"
 
-      expect(page.text.index("Alfie")).to be < page.text.index("Hazel")
-      expect(page.text.index("Hazel")).to be < page.text.index("Hank")
+      expect(page.text.index(@dog_1.name)).to be < page.text.index(@dog_2.name)
+      expect(page.text.index(@dog_2.name)).to be < page.text.index(dog_4.name)
 
       click_on 'Sort Alphabetically'
 
-      expect(page.text.index("Alfie")).to be < page.text.index("Hank")
-      expect(page.text.index("Hank")).to be < page.text.index("Hazel")
+      expect(page.text.index(@dog_1.name)).to be < page.text.index(dog_4.name)
+      expect(page.text.index(dog_4.name)).to be < page.text.index(@dog_2.name)
     end
   end
 end
