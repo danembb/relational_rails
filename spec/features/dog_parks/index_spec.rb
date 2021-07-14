@@ -85,7 +85,7 @@ RSpec.describe 'Dog parks index page' do
     end
   end
 
-  xdescribe 'content sorting' do
+  describe 'content sorting' do
     it 'lists dog parks in order by created at' do
 
       visit '/dog_parks/'
