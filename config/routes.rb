@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/dog_parks/:id', to: 'dog_parks#show'
   get '/dog_parks/:id/edit', to: 'dog_parks#edit'
   patch 'dog_parks/:id', to: 'dog_parks#update'
+  delete '/dog_parks/:id', to: 'dog_parks#destroy'
 
   get '/dog_parks/:dog_park_id/dogs', to: 'dog_park_dogs#index'
   get '/dog_parks/:dog_park_id/dogs/new', to: 'dog_park_dogs#new'
