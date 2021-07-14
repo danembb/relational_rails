@@ -124,5 +124,26 @@ RSpec.describe 'Dog parks dogs index' do
       expect(page.text.index(@dog_1.name)).to be < page.text.index(dog_4.name)
       expect(page.text.index(dog_4.name)).to be < page.text.index(@dog_2.name)
     end
+
+    it 'filters page to only dogs over a certain age threshold' do
+      dog_4 = Dog.create!(name: 'Hank',
+                              plays_fetch: true,
+                              age: 8,
+                              breed: 'Australian Shepherd',
+                              dog_park_id: @park_1.id)
+
+      visit "/dog_parks/#{@park_1.id}/dogs"
+
+      expect(page).to have_content(@dog_1.name)
+      expect(page).to have_content(@dog_2.name)
+      expect(page).to have_content(dog_4.name)
+
+      fill_in('age', with: '2')
+      click_button('Only return dogs older than this age')
+
+      expect(page).to_not have_content(@dog_1.name)
+      expect(page).to_not have_content(@dog_2.name)
+      expect(page).to have_content(dog_4.name)
+    end
   end
 end
