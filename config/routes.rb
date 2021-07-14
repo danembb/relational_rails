@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   get '/dogs/:id', to: 'dogs#show'
   get '/dogs/:id/edit', to: 'dogs#edit'
   patch '/dogs/:id', to: 'dogs#update'
+  delete '/dogs/:id', to: 'dogs#destroy'
 end
