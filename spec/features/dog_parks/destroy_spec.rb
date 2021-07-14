@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'dstroying a dog park' do
+RSpec.describe 'destroying a dog park' do
   it 'can delete the dog park from the show page' do
     park_1 = DogPark.create!(name: "Woofs and Wags",
                             capacity: 25,
