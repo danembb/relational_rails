@@ -77,6 +77,12 @@ RSpec.describe 'Dog parks index page' do
   end
 
   describe 'content sorting' do
-    it 'lists dog parks in order by created at'
-  end 
+    it 'lists dog parks in order by created at' do
+
+      visit '/dog_parks/'
+
+      expect(@park_1.id < @park_2.id).to be(true)
+      expect(page.text.index(@park_2.name)).to be < page.text.index(@park_1.name)
+    end
+  end
 end
