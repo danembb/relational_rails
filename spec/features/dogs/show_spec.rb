@@ -87,4 +87,12 @@ RSpec.describe 'the dog show page' do
 
     expect(current_path).to eq("/dogs/#{@dog_1.id}/edit")
   end
+
+  it 'links to delete dog ' do
+    visit "/dogs/#{@dog_1.id}"
+
+    click_on 'Delete Dog'
+
+    expect(current_path).to eq("/dogs")
+  end
 end

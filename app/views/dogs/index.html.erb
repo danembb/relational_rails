@@ -11,5 +11,6 @@
   <p>Created at: <%= dog.created_at %></p>
   <p>Updated at: <%= dog.updated_at %></p>
   <p><%= link_to "Update #{dog.name}", "/dogs/#{dog.id}/edit" %></p>
+  <p><%= link_to "Delete #{dog.name}", "/dogs/#{dog.id}", method: :delete %></p>
   <br>
 <% end %>

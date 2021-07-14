@@ -37,8 +37,8 @@ RSpec.describe 'the dog park show page' do
   it 'displays the dog park capacity' do
     visit "/dog_parks/#{@park_1.id}"
 
-    expect(page).to have_content(@park_1.capacity)
-    expect(page).to_not have_content(@park_2.capacity)
+    expect(page).to have_content("Capacity: #{@park_1.capacity}")
+    expect(page).to_not have_content("Capacity: #{@park_2.capacity}")
   end
 
   it 'displays if the dog park is off leash' do

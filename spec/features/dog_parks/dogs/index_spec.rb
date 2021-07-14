@@ -104,6 +104,16 @@ RSpec.describe 'Dog parks dogs index' do
 
       expect(current_path).to eq("/dog_parks/#{@park_1.id}/dogs/new")
     end
+
+    it 'links to delete dog and destroys dog' do
+      visit '/dogs'
+
+      click_on 'Delete Alfie'
+
+      expect(current_path).to eq('/dogs')
+      expect(page).to_not have_content('Alfie')
+      expect(page).to have_content('Hazel')
+    end
   end
 
   describe 'content filtering' do
