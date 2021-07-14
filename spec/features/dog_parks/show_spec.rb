@@ -104,4 +104,13 @@ RSpec.describe 'the dog park show page' do
 
     expect(current_path).to eq("/dog_parks/#{@park_1.id}/edit")
   end
+
+  it 'links to delete dog park' do
+    visit "/dog_parks/#{@park_1.id}"
+
+    click_on 'Delete Dog Park'
+
+    expect(current_path).to eq('/dog_parks')
+    expect(page).to_not have_content(@park_1.name)
+  end
 end
