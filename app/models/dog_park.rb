@@ -1,5 +1,5 @@
 class DogPark < ApplicationRecord
-  has_many :dogs
+  has_many :dogs, :dependent => :destroy
 
   def dog_count
     dogs.count
