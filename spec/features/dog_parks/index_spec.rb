@@ -74,9 +74,24 @@ RSpec.describe 'Dog parks index page' do
 
       expect(current_path).to eq("/dog_parks/#{@park_2.id}/edit")
     end
+
+    it 'links to delete record for each dog park' do
+      visit '/dog_parks'
+      click_on 'Delete Woofs and Wags'
+
+      expect(current_path).to eq('/dog_parks')
+      expect(page).to_not have_content(@park_1.name)
+      expect(page).to have_content(@park_2.name)
+    end
   end
 
   describe 'content sorting' do
-    it 'lists dog parks in order by created at'
-  end 
+    it 'lists dog parks in order by created at' do
+
+      visit '/dog_parks/'
+
+      expect(@park_1.id < @park_2.id).to be(true)
+      expect(page.text.index(@park_2.name)).to be < page.text.index(@park_1.name)
+    end
+  end
 end

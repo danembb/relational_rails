@@ -25,6 +25,12 @@ class DogParksController < ApplicationController
     redirect_to "/dog_parks/#{dog_park.id}"
   end
 
+  def destroy
+    dog_park = DogPark.find(params[:id])
+    dog_park.destroy
+    redirect_to '/dog_parks'
+  end
+
 private
   def dog_park_params
     params.permit(:name, :capacity, :off_leash, :food)

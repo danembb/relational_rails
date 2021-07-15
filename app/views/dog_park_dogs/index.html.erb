@@ -3,6 +3,14 @@
 <h1> <%= @dog_park.name %> </h1>
 <h4><%= link_to 'Create Dog',  "/dog_parks/#{@dog_park.id}/dogs/new"%></h4>
 <h4><%= link_to 'Sort Alphabetically', "/dog_parks/#{@dog_park.id}/dogs?alpha=true" %></h4>
+
+<%= form_with url:"/dog_parks/#{@dog_park.id}/dogs", method: :get, local: true do |form| %>
+  <%= form.label :age %>
+  <%= form.text_field :age  %>
+  <%= form.hidden_field :dog_park_id, value: @dog_park.id %>
+  <%= form.submit "Only return dogs older than this age" %>
+<% end %>
+
 <% @dogs.each do |dog| %>
   <h3><%= dog.name %></h3>
   <p>Dog park id: <%= dog.dog_park_id %></p>
@@ -11,5 +19,6 @@
   <p>Breed: <%= dog.breed %></p>
   <p>Created at: <%= dog.created_at %></p>
   <p>Updated at: <%= dog.updated_at %></p>
+  <p><%= link_to "Delete #{dog.name}", "/dogs/#{dog.id}", method: :delete %></p>
   <br>
 <% end %>

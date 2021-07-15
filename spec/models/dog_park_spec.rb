@@ -28,11 +28,21 @@ RSpec.describe DogPark do
                               age: 5,
                               breed: 'Labrador Retriever',
                               dog_park_id: @park_2.id)
+      @dog_4 = Dog.create!(name: 'Hank',
+                              plays_fetch: true,
+                              age: 8,
+                              breed: 'Australian Shepherd',
+                              dog_park_id: @park_1.id)
     end
 
     it 'returns dog count in a park' do
-      expect(@park_1.dog_count).to eq(2)
+      expect(@park_1.dog_count).to eq(3)
       expect(@park_2.dog_count).to eq(1)
+    end
+
+    it 'returns dogs older than a given age' do
+      expect(@park_1.age_filter(2)).to eq([@dog_4])
+      expect(@park_1.age_filter(1)).to eq([@dog_2, @dog_4])
     end
   end
 end

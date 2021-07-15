@@ -3,6 +3,8 @@ class DogParkDogsController < ApplicationController
     @dog_park = DogPark.find(params[:dog_park_id])
     if params[:alpha] == 'true'
       @dogs = @dog_park.dogs.order(:name)
+    elsif params[:commit] == 'Only return dogs older than this age'
+      @dogs = @dog_park.age_filter(params[:age])
     else
       @dogs = @dog_park.dogs
     end
