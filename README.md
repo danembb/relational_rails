@@ -1,26 +1,3 @@
 # README
 
-## Need to add screenshot of database structure!
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Database Diagram](/storage/Screen Shot 2021-07-14 at 8.41.26 PM.png) 
